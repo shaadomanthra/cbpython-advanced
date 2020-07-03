@@ -1,6 +1,5 @@
 # Taking input from user
-
-# Input funtion
+import sys
 
 # command line arguments
-
+print(f"The first commandline argument is {sys.argv[1]}")
