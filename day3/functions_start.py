@@ -1,6 +1,10 @@
 # # Functions in Python
 
 # Basic function
+def basic():
+    print("This is basic function")
+
+basic()
 
 # function with arguments
 
