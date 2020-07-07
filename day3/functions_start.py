@@ -25,7 +25,7 @@ def subtract(a,b=20):
     res = a-b
     return res
 
-result = subtract(50,20,30)
+result = subtract(50,30)
 print(f"The subtraction of two number is {result}")
 
 # function with varaible arguments
