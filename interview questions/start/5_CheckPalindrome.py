@@ -4,16 +4,12 @@
 #  eg: 353, 55644655
 
 def palindrome(num):
-    reverse = 0
-    original = num
-    while(num):
-        lastdigit = num%10
-        reverse = reverse * 10 + lastdigit
-        num = int(num /10)
-    print(reverse,original)
-    if reverse == original:
+    num = str(num)
+    reverse = num[::-1]
+    print(reverse,num)
+    if reverse == num:
         return 1
     else:
         return 0
 
-print(palindrome(345))
+print(palindrome(343))
