@@ -18,7 +18,7 @@ while True:
     rects = cascade.detectMultiScale(gray, 1.7, 11)
     # draw the recctangle on the frame
 
-    print(rects)
+    # print(rects)
 
     for (x,y,w,h) in rects:
         y = int(y - 0.15*h)
