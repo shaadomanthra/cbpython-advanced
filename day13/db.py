@@ -17,7 +17,6 @@ def execute(conn, query):
         cursor = conn.cursor()
         cursor.execute(query)
         conn.commit()
-        print("Query is executed - ",query)
         cursor.close()
     except Error as e:
         print(e)
