@@ -1,0 +1,1 @@
+# Write a python program to find GCD of two given numbers

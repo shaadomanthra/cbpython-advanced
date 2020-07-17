@@ -1,0 +1,1 @@
+# Write a python program to find LCM of two given numbers
