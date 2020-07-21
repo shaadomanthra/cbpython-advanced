@@ -1,0 +1,1 @@
+# write a python program to count frequency of elements in list
