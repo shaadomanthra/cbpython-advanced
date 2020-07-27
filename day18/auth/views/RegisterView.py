@@ -1,4 +1,6 @@
 from tkinter import *
+from models.RegisterModel import RegisterModel
+
 class RegisterView:
 
     def main(self):
@@ -24,8 +26,15 @@ class RegisterView:
         password_entry = Entry(window, width=20)
         password_entry.grid(row=2, column=1)
 
-        register_button  = Button(window,text="Register")
+        register_button  = Button(window,text="Register",command=lambda : self.saveData(name_entry.get(),email_entry.get(),password_entry.get()))
         register_button.grid(row=3,column=1)
 
         window.mainloop()
+
+    def saveData(self,name,email,password):
+        print(name,email,password)
+        # rm = RegisterModsel()
+        # rm.save(name,email,password)
+
+
 

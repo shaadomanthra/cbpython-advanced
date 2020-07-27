@@ -9,15 +9,13 @@ class AuthApp:
         # l = LoginView()
         # l.main()
         #
-        # r = RegisterView()
-        # r.main()
+        r = RegisterView()
+        r.main()
 
-        h = HelloView()
-        h.main()
+        # h = HelloView()
+        # h.main()
 
-    def dbcreate(self):
-        rm = RegisterModel()
-        rm.create()
+
 
 app = AuthApp()
-app.dbcreate()
+app.start()
