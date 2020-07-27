@@ -1,5 +1,6 @@
 from tkinter import *
 from models.RegisterModel import RegisterModel
+from tkinter import messagebox
 
 class RegisterView:
 
@@ -33,8 +34,9 @@ class RegisterView:
 
     def saveData(self,name,email,password):
         print(name,email,password)
-        # rm = RegisterModsel()
-        # rm.save(name,email,password)
+        rm = RegisterModel()
+        rm.save(name,email,password)
+        messagebox.showinfo('Success','One Record Inserted')
 
 
 
