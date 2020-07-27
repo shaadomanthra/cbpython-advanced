@@ -1,6 +1,7 @@
 from views.LoginView import LoginView
 from views.RegisterView import RegisterView
 from views.HelloView import HelloView
+from models.RegisterModel import RegisterModel
 
 class AuthApp:
 
@@ -14,7 +15,9 @@ class AuthApp:
         h = HelloView()
         h.main()
 
-
+    def dbcreate(self):
+        rm = RegisterModel()
+        rm.create()
 
 app = AuthApp()
-app.start()
+app.dbcreate()

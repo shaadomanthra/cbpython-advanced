@@ -3,7 +3,7 @@
 def fibonacci(num):
     if num<0:
         print("Incorrect Value")
-    a = 0
+    a = 1
     b = 1
     print(a)
     print(b)
