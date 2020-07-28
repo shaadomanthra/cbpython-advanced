@@ -25,7 +25,7 @@ class RegisterView:
         email_entry = Entry(window, width=20)
         email_entry.grid(row=1, column=1)
 
-        password_entry = Entry(window, width=20)
+        password_entry = Entry(window,show="*", width=20)
         password_entry.grid(row=2, column=1)
 
         register_button  = Button(window,text="Register",command=lambda : self.saveData(name_entry.get(),email_entry.get(),password_entry.get()))

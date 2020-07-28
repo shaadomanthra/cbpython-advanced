@@ -6,11 +6,11 @@ from models.RegisterModel import RegisterModel
 class AuthApp:
 
     def start(self):
-        # l = LoginView()
-        # l.main()
+        l = LoginView()
+        l.main()
         #
-        r = RegisterView()
-        r.main()
+        # r = RegisterView()
+        # r.main()
 
         # h = HelloView()
         # h.main()
