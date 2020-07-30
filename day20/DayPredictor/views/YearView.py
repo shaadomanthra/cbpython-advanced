@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter import messagebox
 from models.YearModel import YearModel
+from controllers.YearController import YearController
+
 class YearView:
 
     def main(self):
@@ -21,17 +23,8 @@ class YearView:
 
     def checkLeapYear(self,year):
 
-        if year % 4 == 0:
-            if year % 100 == 0:
-                if year % 400 == 0:
-                    leap = 1
-                else:
-                    leap =0
-            else:
-                leap = 1
-        else:
-            leap=0
-
+        yc  =YearController()
+        leap = yc.checkLeap(year)
 
         ym = YearModel()
         ym.insert(year,leap)
