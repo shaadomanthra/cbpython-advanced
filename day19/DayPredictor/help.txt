@@ -1,0 +1,9 @@
+# Day Predictor
+1. User can enter the date, the application will return the day name
+    - datecontroller which will check the day with some login
+    - datemodel will save the entry in the database - table (entires - id, date, day)
+    - dateview will have the gui
+2. User will enter year, the application has to return leap year or not
+    - yearcontroller will have logic to check leap year
+    - yearmodel will enter the data into the data base - table (year - id, year, leapyear)
+    - yearview will have the gui

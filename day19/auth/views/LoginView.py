@@ -18,7 +18,7 @@ class LoginView:
         email_entry = Entry(window, width=20)
         email_entry.grid(row=1, column=1)
 
-        password_entry = Entry(window, width=20)
+        password_entry = Entry(window, show="*",width=20)
         password_entry.grid(row=2, column=1)
 
         login_button = Button(window, text="Login",command=lambda: self.checkUser(email_entry.get(),password_entry.get()))
