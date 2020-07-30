@@ -8,9 +8,9 @@ class MyApp:
 
         print("Hello")
 
-    def insert(self,year,leap):
-        ym = YearModel()
-        ym.insert(year,leap)
+    # def insert(self,year,leap):
+    #     ym = YearModel()
+    #     ym.insert(year,leap)
 
 app = MyApp()
-app.insert(2005,0)
+app.start()
