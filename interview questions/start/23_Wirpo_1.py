@@ -7,5 +7,5 @@
 #
 #
 # Input: Input to the function contains only one argument.
-# House: A string representing the sequence of house markings.
-# Output: return a string that represents the houses which were not renovated.
+# House: A string representing the sequence of house markings. PRSTOVWI
+# Output: return a string that represents the houses which were not renovated. PRSTVW
