@@ -1,8 +1,7 @@
 from cv2 import cv2
-from PIL import Image
 from pyzbar import pyzbar
 
-# First step is to capture the video
+# Invoke webcamera
 cap = cv2.VideoCapture(0)
 while True:
     # To capture the photo
@@ -12,7 +11,14 @@ while True:
     barcodes = pyzbar.decode(gray)
     print(barcodes)
 
-    cv2.imshow('Barcode Detector',gray)
+    for barcode in barcodes:
+        (x,y,w,h) =barcode.rect
+        cv2.rectangle(image,(x,y),(x+w,y+h),(0,0,255),2)
+
+        # d = barcode.data.decode('utf-8')
+        # print(d)
+
+    cv2.imshow('Barcode Detector',image)
     c = cv2.waitKey(1)
     if c == 27:
         break
