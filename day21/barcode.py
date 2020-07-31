@@ -15,8 +15,8 @@ while True:
         (x,y,w,h) =barcode.rect
         cv2.rectangle(image,(x,y),(x+w,y+h),(0,0,255),2)
 
-        d = barcode.data.decode('utf-8')
-        cv2.putText(image,d,(x,y-10),cv2.FONT_HERSHEY_SIMPLEX,0.5,(51,51,255),2)
+        text = barcode.data.decode('utf-8')
+        cv2.putText(image,text,(x,y-10),cv2.FONT_HERSHEY_SIMPLEX,0.5,(51,51,255),2)
 
     cv2.imshow('Barcode Detector',image)
     c = cv2.waitKey(1)
