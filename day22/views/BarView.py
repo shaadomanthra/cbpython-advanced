@@ -28,6 +28,7 @@ class BarView:
     def webcam(self):
         self.stop = False
         self.cap = cv2.VideoCapture(0)
+
         t = threading.Thread(target=self.start,args=())
         t.start()
 
