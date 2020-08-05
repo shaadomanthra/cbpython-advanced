@@ -1,0 +1,75 @@
+from tkinter import *
+from cv2 import cv2
+from pyzbar import pyzbar
+from PIL import Image
+from PIL import ImageTk #for converting opencv image to tkinter image
+import threading #to run processess simultaneously
+
+
+class BarView:
+
+    def main(self):
+        print("This is main from Barview")
+
+        window = Tk()
+        window.title("Barcode & Qrcode detector")
+
+        frame = Frame(window,padx=10,pady=10,bg="#ff5733")
+        frame.grid(row=0,column=0)
+        self.label = Label(frame)
+        self.label.grid(row=0,column=0)
+
+        b1 = Button(frame, text="start",command=self.webcam)
+        b1.grid(row=1,column=0,padx=5,pady=5)
+
+        b2 = Button(frame, text="stop", command = self.stop)
+        b2.grid(row=1,column=1,padx=5,pady=5)
+
+        b3 = Button(frame, text="Capture",command = self.capture)
+        b3.grid(row=1,column=2,padx=5,pady=5)
+
+        window.mainloop()
+
+    def webcam(self):
+        print("Webcam function")
+        self.stop = False
+        self.cap = cv2.VideoCapture(0)
+
+        # To start the webcam as a seperate process we will use threading
+        # this will enable us to run two or threee processes simultaneosly
+        t = threading.Thread(target=self.start, args=())
+        t.start()
+
+
+    def start(self):
+        print("start function")
+        try:
+            ret, image = self.cap.read()
+            image = cv2.resize(image,None,fx=0.5,fy=0.5,interpolation=cv2.INTER_AREA)
+            gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+
+            barcodes = pyzbar.decode(gray)
+            print(barcodes)
+
+            # Convert the opencv image to tkinter image
+            image_array =Image.fromarray(image)
+            image_tk = ImageTk.PhotoImage(image_array)
+
+            # update the image in the tkinter window
+            self.label.config(image=image_tk)
+            self.label.image = image_tk
+
+            # refresh the label with recursive call
+            self.label.after(10,self.start)
+
+
+
+
+        except:
+            print("Some error")
+
+    def stop(self):
+        print("stop function")
+
+    def capture(self):
+        print("Capture function")
