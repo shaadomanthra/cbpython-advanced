@@ -60,7 +60,10 @@ class BarView:
             self.label.image = image_tk
 
             # refresh the label with recursive call
-            self.label.after(10,self.start)
+            if self.stop == False:
+                self.label.after(10,self.start)
+            else:
+                self.label.image = None
 
 
 
@@ -70,6 +73,7 @@ class BarView:
 
     def stop(self):
         print("stop function")
+        self.stop = True
 
     def capture(self):
         print("Capture function")
