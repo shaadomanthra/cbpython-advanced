@@ -5,6 +5,7 @@ from pyzbar import pyzbar
 from PIL import Image
 from PIL import ImageTk #for converting opencv image to tkinter image
 import threading #to run processess simultaneously
+from models.BarModel import BarModel
 
 
 class BarView:
@@ -57,6 +58,14 @@ class BarView:
                 (x, y, w, h) = barcode.rect
                 cv2.rectangle(color, (x, y), (x + w, y + h), (0, 0, 255), 2)
                 text = barcode.data.decode('utf-8')
+                username  = 'krishna teja'
+
+                # create a model object
+                bm = BarModel()
+
+                if bm.fetch(text,username)==None:
+                    bm.insertBarcode(text,username)
+
                 cv2.putText(color, text, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (51, 51, 255), 2)
 
             # Convert the opencv image to tkinter image

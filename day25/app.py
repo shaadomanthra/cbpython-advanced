@@ -9,12 +9,12 @@ class MyApp:
         bv = BarView()
         bv.main()
 
-    def db(self):
-        bm = BarModel()
-        # bm.insertBarcode("Another Text","Ramesh")
-        result = bm.fetch("Another Text","Ramesh")
-        print(result)
+    # def db(self):
+    #     bm = BarModel()
+    #     # bm.insertBarcode("Another Text","Ramesh")
+    #     result = bm.fetch("Another Text","Ramesh")
+    #     print(result)
 
 
 app = MyApp()
-app.db()
+app.start()
