@@ -11,7 +11,9 @@ class MyApp:
 
     def db(self):
         bm = BarModel()
-        bm.insertBarcode("This is sample text","Krishna Teja")
+        # bm.insertBarcode("Another Text","Ramesh")
+        result = bm.fetch("Another Text","Ramesh")
+        print(result)
 
 
 app = MyApp()
