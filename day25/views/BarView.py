@@ -19,7 +19,7 @@ class BarView:
         frame = Frame(window,padx=10,pady=10,bg="#ff5733")
         frame.grid(row=0,column=0)
         self.label = Label(frame)
-        self.label.grid(row=0,column=0,columns=3)
+        self.label.grid(row=0,column=0,columns=4)
 
         b1 = Button(frame, text="start",command=self.webcam)
         b1.grid(row=1,column=0,padx=10,pady=10,sticky='nesw')
@@ -29,6 +29,12 @@ class BarView:
 
         b3 = Button(frame, text="Capture",command = self.capture,padx=10,pady=10)
         b3.grid(row=1,column=2,padx=10,pady=10,sticky='nesw')
+
+        b4 = Button(frame, text="History", command=self.history, padx=10, pady=10)
+        b4.grid(row=1, column=3, padx=10, pady=10, sticky='nesw')
+
+        self.label2 = Label(frame, text="show history")
+        self.label2.grid(row=2,column=0,padx=20,pady=20,columns=4)
 
         window.mainloop()
 
@@ -92,3 +98,9 @@ class BarView:
         print("Capture function")
         self.image_array.save('images/1.jpg')
         messagebox.showinfo("Image Capture","Image frame is captured")
+
+    def history(self):
+        bm = BarModel()
+        result = bm.fetchall("krishna teja")
+        print(result)
+        self.label2.config(text=result)

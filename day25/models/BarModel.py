@@ -13,3 +13,9 @@ class BarModel:
         query = f"SELECT * FROM barcodes WHERE text='{text}' and username='{username}'"
         result = fetchone(conn,query)
         return result
+
+    def fetchall(self,username):
+        conn = connect("app.db")
+        query = f"SELECT * FROM barcodes WHERE  username='{username}'"
+        result = fetchall(conn, query)
+        return result
