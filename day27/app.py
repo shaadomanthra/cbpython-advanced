@@ -10,8 +10,8 @@ class MyApp:
         lv = LoginView()
         lv.main()
 
-        # bv = BarView()
-        # bv.main()
+        bv = BarView()
+        bv.main()
 
 
 app = MyApp()
