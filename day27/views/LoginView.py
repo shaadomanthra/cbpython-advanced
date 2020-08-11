@@ -3,6 +3,8 @@ from tkinter import messagebox
 from models.LoginModel import LoginModel
 class LoginView:
 
+    username = None
+
     def main(self):
         self.window = Tk()
 
@@ -31,6 +33,8 @@ class LoginView:
         lm = LoginModel()
         result = lm.getUser(email,password)
         if result:
+            self.username = result[1]
+
             messagebox.showinfo('Success','User found')
             self.window.destroy()
         else:

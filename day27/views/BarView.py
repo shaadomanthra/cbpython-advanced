@@ -10,6 +10,8 @@ from models.BarModel import BarModel
 
 class BarView:
 
+    username = None
+
     def main(self):
         # print("This is main from Barview")
 
@@ -64,13 +66,15 @@ class BarView:
                 (x, y, w, h) = barcode.rect
                 cv2.rectangle(color, (x, y), (x + w, y + h), (0, 0, 255), 2)
                 text = barcode.data.decode('utf-8')
-                username  = 'krishna teja'
+                username  = self.username
+                print(username, self.username)
 
                 # create a model object
                 bm = BarModel()
 
                 if bm.fetch(text,username)==None:
                     bm.insertBarcode(text,username)
+                    print(text)
 
                 cv2.putText(color, text, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (51, 51, 255), 2)
 
@@ -101,13 +105,13 @@ class BarView:
 
     def history(self):
         bm = BarModel()
-        result = bm.fetchall("krishna teja")
+        result = bm.fetchall(self.username)
 
         msg = ''
         for i in result:
             line = str(i[2]) + ' - ' + str(i[1])
             msg = msg + line + "\n"
 
-        print(msg)
+        # print(msg)
         # print(result)
         self.label2.config(text=msg)

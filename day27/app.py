@@ -7,10 +7,13 @@ class MyApp:
     def start(self):
         print("Application started")
 
+
         lv = LoginView()
         lv.main()
 
+
         bv = BarView()
+        bv.username = lv.username
         bv.main()
 
 
