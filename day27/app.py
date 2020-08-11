@@ -1,19 +1,17 @@
 from views.BarView import BarView
-from models.BarModel import BarModel
+from views.LoginView import LoginView
+from views.RegisterView import RegisterView
 
 class MyApp:
 
     def start(self):
         print("Application started")
 
-        bv = BarView()
-        bv.main()
+        lv = LoginView()
+        lv.main()
 
-    # def db(self):
-    #     bm = BarModel()
-    #     # bm.insertBarcode("Another Text","Ramesh")
-    #     result = bm.fetch("Another Text","Ramesh")
-    #     print(result)
+        # bv = BarView()
+        # bv.main()
 
 
 app = MyApp()
