@@ -2,7 +2,8 @@
 # you are required to find the runner-up score. You are given  scores.
 # Store them in a list and find the score of the runner-up.
 
-# input - The first line contains . The second line contains an array
+# input - The first line contains the number of participants. The second line
+# contains an array
 # of  integers each separated by a space.
 
 # eg: input
