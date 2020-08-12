@@ -39,7 +39,7 @@ def var_args_func(*args):
 
 # global & local variables
 a = 10
-print(a)
+print(a)a
 
 def func():
 	global a
