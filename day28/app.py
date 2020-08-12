@@ -7,11 +7,8 @@ class MyApp:
     def start(self):
         print("Application started")
 
-
-
         lv = LoginView()
         lv.main()
-
 
         if( lv.role =='admin'):
             av = AdminView()
